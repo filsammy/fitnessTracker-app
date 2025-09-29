@@ -2,7 +2,7 @@
 
 ## Live URLs
 
-frontend:
+frontend: https://fitness-tracker-app-zeta.vercel.app/
 backend: https://fitnesstracker-app-8cdz.onrender.com
 
 ---
