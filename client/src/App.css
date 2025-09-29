@@ -1,0 +1,252 @@
+/* =========================
+   App.css - Fitness Tracker
+========================= */
+
+/* Full-page background */
+body,
+html,
+#root {
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+  color: #fff;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/037/170/421/non_2x/ai-generated-a-gym-with-dark-exercise-equipment-free-photo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Optional overlay for contrast */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* Full background container */
+.home-box {
+  background: url("https://images.pexels.com/photos/2803160/pexels-photo-2803160.jpeg") no-repeat center center/cover;
+  border-radius: 16px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  width: 100%;
+  color: white;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  /* Fade effect */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   Bootstrap component overrides
+========================= */
+
+/* Containers, cards, modals fully transparent */
+.container,
+.card,
+.modal-content,
+.modal-body {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar-custom {
+  background-color: #1c1c1c !important;
+  /* dark for contrast */
+}
+
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: #ff4d4d !important;
+  /* energetic red */
+}
+
+.navbar-custom .nav-link:hover {
+  color: #ff6f00 !important;
+  /* bright orange on hover */
+}
+
+.btn-logout {
+  background-color: #ff4d4d !important;
+  border-color: #ff4d4d !important;
+  color: #fff !important;
+}
+
+.btn-logout:hover {
+  background-color: #e04343 !important;
+  border-color: #e04343 !important;
+}
+
+/* =========================
+   Workout cards
+========================= */
+
+.workout-card {
+  background-color: #0f4d9e !important;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.workout-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
+}
+
+.workout-card .card-body {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.workout-card-title {
+  color: #FFFFFF !important;
+  font-weight: bold !important;
+  font-size: 1.5rem !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.workout-card-text {
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.badge-pending {
+  background-color: #9912e7;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.badge-completed {
+  background-color: #06ca47;
+  color: #363537;
+  font-size: 0.75rem;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.custom-btn {
+  background-color: #ff4d4d !important;
+  /* energetic red */
+  border-color: #ff4d4d !important;
+  color: #fff !important;
+  transition: background-color 0.2s ease;
+}
+
+.custom-btn:hover:not(:disabled) {
+  background-color: #e04343 !important;
+  border-color: #e04343 !important;
+}
+
+.custom-btn:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+.btn-add-workout {
+  background-color: #f2ff3c !important;
+  border-color: #f2ff3c !important;
+}
+
+.btn-edit.btn {
+  background-color: #ff6f00;
+  border-color: #ff6f00;
+  color: #fff;
+}
+
+.btn-edit.btn:hover {
+  background-color: #e06500;
+  border-color: #e06500;
+}
+
+.btn-delete.btn {
+  background-color: #ff4d4d;
+  border-color: #ff4d4d;
+  color: #fff;
+}
+
+.btn-delete.btn:hover {
+  background-color: #e04343;
+  border-color: #e04343;
+}
+
+.btn-complete.btn {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+
+.btn-complete.btn:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+/* =========================
+      Loading State
+========================= */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ffe74c;
+  border-top: 4px solid #ff5964;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   Optional responsive tweaks
+========================= */
+
+/* Reduce opacity on very small screens if background is busy */
+@media (max-width: 768px) {
+  body::before {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
