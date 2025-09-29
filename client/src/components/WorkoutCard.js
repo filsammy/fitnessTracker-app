@@ -53,7 +53,8 @@ export default function WorkoutCard({ workout, fetchWorkouts }) {
     setLoading(true);
     try {
       const res = await fetch(
-        `https://fitnessapi-q6ro.onrender.com/workouts/updateWorkout/${workout._id}`,
+        `${process.env.REACT_APP_API_URL
+}/workouts/updateWorkout/${workout._id}`,
         {
           method: "PATCH",
           headers: {

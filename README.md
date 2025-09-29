@@ -12,7 +12,7 @@ backend: https://fitnesstracker-app-8cdz.onrender.com
 frontend:
 
 ```
-VITE_API_URL=https://fitnesstracker-app-8cdz.onrender.com
+REACT_APP_API_URL=https://fitnesstracker-app-8cdz.onrender.com
 ```
 
 backend:
