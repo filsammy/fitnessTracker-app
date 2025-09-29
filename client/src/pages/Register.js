@@ -32,7 +32,7 @@ export default function Register() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://fitnessapi-q6ro.onrender.com/users/register", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

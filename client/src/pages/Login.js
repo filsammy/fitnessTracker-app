@@ -17,7 +17,7 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("https://fitnessapi-q6ro.onrender.com/users/login", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
@@ -27,7 +27,7 @@ export default function Login() {
       if (data.access) {
         localStorage.setItem("token", data.access);
 
-        const userRes = await fetch("https://fitnessapi-q6ro.onrender.com/users/details", {
+        const userRes = await fetch(`${import.meta.env.VITE_API_URL}/users/details`, {
           headers: { Authorization: `Bearer ${data.access}` }
         });
         const userData = await userRes.json();

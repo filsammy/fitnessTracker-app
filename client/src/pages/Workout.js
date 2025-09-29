@@ -18,7 +18,7 @@ export default function Workout() {
     if (!user.id) return;
     setLoading(true);
     try {
-      const res = await fetch("https://fitnessapi-q6ro.onrender.com/workouts/getMyWorkouts", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/workouts/getMyWorkouts`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       const data = await res.json();
@@ -43,7 +43,7 @@ export default function Workout() {
     }
     setLoading(true);
     try {
-      const res = await fetch("https://fitnessapi-q6ro.onrender.com/workouts/addWorkout", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/workouts/addWorkout`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

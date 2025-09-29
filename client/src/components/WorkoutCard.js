@@ -27,7 +27,7 @@ export default function WorkoutCard({ workout, fetchWorkouts }) {
     setLoading(true);
     try {
       const res = await fetch(
-        `https://fitnessapi-q6ro.onrender.com/workouts/deleteWorkout/${workout._id}`,
+        `${import.meta.env.VITE_API_URL}/${workout._id}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },

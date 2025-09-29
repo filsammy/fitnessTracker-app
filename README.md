@@ -3,7 +3,7 @@
 ## Live URLs
 
 frontend:
-backend:
+backend: https://fitnesstracker-app-8cdz.onrender.com
 
 ---
 
@@ -12,7 +12,7 @@ backend:
 frontend:
 
 ```
-
+VITE_API_URL=https://fitnesstracker-app-8cdz.onrender.com
 ```
 
 backend:
